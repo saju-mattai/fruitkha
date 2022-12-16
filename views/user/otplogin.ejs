@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="/assets/css/signup.css">
+<body>
+    <form class="box" action="/otplogin" method="post">
+        <h1>Login</h1>   
+        <% if (userexist){ %>
+            <p style="color: red;"> Please SignUp</p>
+            <% } %>
+        <!-- <input type="text" placeholder="Username">
+        <input type="int" placeholder="Mobile"> -->
+        <input type="int" placeholder="Registered Mobile No" name="Mobile">
+        
+        <input type="submit" value="Request OTP" placeholder="Request OTP">
+        <a href="/signup">Don't have an account?</a>
+    </form>
+</body>
+</html>
+</head>
+
+</html>

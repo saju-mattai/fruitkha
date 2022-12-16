@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Skydash Admin</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="/adminassets/asset/vendors/feather/feather.css">
+  <link rel="stylesheet" href="/adminassets/asset/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" href="/adminassets/asset/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="/adminassets/asset/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
+  <link rel="stylesheet" href="/adminassets/asset/vendors/ti-icons/css/themify-icons.css">
+  <link rel="stylesheet" type="text/css" href="/adminassets/asset/js/select.dataTables.min.css">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/adminassets/asset/css/vertical-layout-light/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="/adminassets/asset/images/favicon.png" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="/admin"><img src="/adminassets/asset/images/logo.svg" class="mr-2"
+            alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="/admin"><img src="/adminassets/asset/images/logo-mini.svg"
+            alt="logo" /></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <span class="input-group-text" id="search">
+                  <i class="icon-search"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now"
+                aria-label="search" aria-describedby="search">
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+              data-toggle="dropdown">
+              <i class="icon-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+              aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="ti-info-alt mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">Application Error</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Just now
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="ti-settings mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">Settings</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Private message
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="ti-user mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">New user registration</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 days ago
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <img src="/adminassets/asset/images/faces/face28.jpg" alt="profile" />
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item">
+                <i class="ti-settings text-primary"></i>
+                Settings
+              </a>
+              <a class="dropdown-item">
+                <a class="dropdown-item" href="/admin-logout">
+                  Logout
+                </a>
+            </div>
+          </li>
+          <li class="nav-item nav-settings d-none d-lg-flex">
+            <a class="nav-link" href="#">
+              <i class="icon-ellipsis"></i>
+            </a>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+          data-toggle="offcanvas">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="ti-settings"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close ti-close"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+            <div class="img-ss rounded-circle bg-light border mr-3"></div>Light
+          </div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme">
+            <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
+          </div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <div id="right-sidebar" class="settings-panel">
+        <i class="settings-close ti-close"></i>
+        <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="todo-tab" data-toggle="tab" href="#todo-section" role="tab"
+              aria-controls="todo-section" aria-expanded="true">TO DO LIST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="chats-tab" data-toggle="tab" href="#chats-section" role="tab"
+              aria-controls="chats-section">CHATS</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="setting-content">
+          <div class="tab-pane fade show active scroll-wrapper" id="todo-section" role="tabpanel"
+            aria-labelledby="todo-section">
+            <div class="add-items d-flex px-3 mb-0">
+              <form class="form w-100">
+                <div class="form-group d-flex">
+                  <input type="text" class="form-control todo-list-input" placeholder="Add To-do">
+                  <button type="submit" class="add btn btn-primary todo-list-add-btn" id="add-task">Add</button>
+                </div>
+              </form>
+            </div>
+            <div class="list-wrapper px-3">
+              <ul class="d-flex flex-column-reverse todo-list">
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Team review meeting at 3.00 PM
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Prepare for presentation
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox">
+                      Resolve all the low priority tickets due today
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Schedule meeting for next week
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+                <li class="completed">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="checkbox" type="checkbox" checked>
+                      Project review
+                    </label>
+                  </div>
+                  <i class="remove ti-close"></i>
+                </li>
+              </ul>
+            </div>
+            <h4 class="px-3 text-muted mt-5 font-weight-light mb-0">Events</h4>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 11 2018</span>
+              </div>
+              <p class="mb-0 font-weight-thin text-gray">Creating component page build a js</p>
+              <p class="text-gray mb-0">The total number of sessions</p>
+            </div>
+            <div class="events pt-4 px-3">
+              <div class="wrapper d-flex mb-2">
+                <i class="ti-control-record text-primary mr-2"></i>
+                <span>Feb 7 2018</span>
+              </div>
+              <p class="mb-0 font-weight-thin text-gray">Meeting with Alisa</p>
+              <p class="text-gray mb-0 ">Call Sarah Graves</p>
+            </div>
+          </div>
+          <!-- To do section tab ends -->
+          <div class="tab-pane fade" id="chats-section" role="tabpanel" aria-labelledby="chats-section">
+            <div class="d-flex align-items-center justify-content-between border-bottom">
+              <p class="settings-heading border-top-0 mb-3 pl-3 pt-0 border-bottom-0 pb-0">Friends</p>
+              <small class="settings-heading border-top-0 mb-3 pt-0 border-bottom-0 pb-0 pr-3 font-weight-normal">See
+                All</small>
+            </div>
+            <ul class="chat-list">
+              <li class="list active">
+                <div class="profile"><img src="/adminassets/asset/images/faces/face1.jpg" alt="image"><span
+                    class="online"></span></div>
+                <div class="info">
+                  <p>Thomas Douglas</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">19 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="/adminassets/asset/images/faces/face2.jpg" alt="image"><span
+                    class="offline"></span></div>
+                <div class="info">
+                  <div class="wrapper d-flex">
+                    <p>Catherine</p>
+                  </div>
+                  <p>Away</p>
+                </div>
+                <div class="badge badge-success badge-pill my-auto mx-2">4</div>
+                <small class="text-muted my-auto">23 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="/adminassets/asset/images/faces/face3.jpg" alt="image"><span
+                    class="online"></span></div>
+                <div class="info">
+                  <p>Daniel Russell</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">14 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="/adminassets/asset/images/faces/face4.jpg" alt="image"><span
+                    class="offline"></span></div>
+                <div class="info">
+                  <p>James Richardson</p>
+                  <p>Away</p>
+                </div>
+                <small class="text-muted my-auto">2 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="/adminassets/asset/images/faces/face5.jpg" alt="image"><span
+                    class="online"></span></div>
+                <div class="info">
+                  <p>Madeline Kennedy</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">5 min</small>
+              </li>
+              <li class="list">
+                <div class="profile"><img src="/adminassets/asset/images/faces/face6.jpg" alt="image"><span
+                    class="online"></span></div>
+                <div class="info">
+                  <p>Sarah Graves</p>
+                  <p>Available</p>
+                </div>
+                <small class="text-muted my-auto">47 min</small>
+              </li>
+            </ul>
+          </div>
+          <!-- chat tab ends -->
+        </div>
+      </div>
+      <!-- partial -->
+      <!-- partial:../../partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/admin">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title"> Management</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/view-product">All Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/add-product">Add Products</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/add-category">Add Category</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/view-category">View Category</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false"
+              aria-controls="form-elements">
+              <i class="icon-columns menu-icon"></i>
+              <span class="menu-title">User Management</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="form-elements">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="/users">All Users</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+              <i class="icon-bar-graph menu-icon"></i>
+              <span class="menu-title">Order Management</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/orders">All Orders</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+              <i class="icon-grid-2 menu-icon"></i>
+              <span class="menu-title">Coupons</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tables">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/admin">Coupons</a></li>
+              </ul>
+            </div>
+          </li>
+
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+
+            <header>
+              <h1>All Orders</h1>
+              <p>View all orders from users</p>
+            </header>
+
+
+            <div class="container">
+
+              <div class="heading">
+                <div class="odetails-1">
+                  <p><b>Order</b></p>
+                  <p>
+                    <%= product._id %>
+                  </p>
+                </div>
+                <div class="odetails-2">
+                  <p></p>
+                </div>
+
+              </div>
+
+              <hr>
+
+              <% for(var i=0; i < product.length;i++){ %>
+
+
+                <div class="card-containers">
+                  <div class="card">
+                    <div class="img">
+                      <img src="<%=product[i].products.products.Image1%>" alt="">
+                    </div>
+                    <div class="parent">
+                      <div class="content">
+                        <div class="details-1">
+                          <p>
+                          <h6> Name: <%= product[i].products.products.Name %>
+                          </h6>
+                          </p>
+                          <p>
+                          <h6> Price: <%= product[i].products.products.Price %>
+                          </h6>
+                          </p>
+                          <p>
+                          <h6> quantity: <%= product[i].products. quantity %>
+                          </h6>
+                          </p>
+                        </div>
+                        <div class="details-2">
+                        </div>
+
+                      </div>
+                      <div class="status">
+
+                        <div class="sec1">
+                          <h6>Status</h6>
+                          <h6>
+                            <%= product[i].products.status%>
+                          </h6>
+
+                        </div>
+                        <div class="sec2">
+                          <h6>paymentMethod:<%=product[i].paymentMethod%>
+                          </h6>
+
+                        </div>
+                      </div>
+                      <div class="status">
+                              <div class="sec1">
+                                  <h6>Address</h6>
+                                 
+                                 
+                                  <h6><%= product[i].delivaryDetails.address%></h6>
+                                  <h6><%= product[i].delivaryDetails.pincode%></h6>
+                                  <h6><%= product[i].delivaryDetails.mobile%></h6>
+                                  
+                              </div>
+                          </div>
+
+                    </div>
+                  </div>
+                  <!-- <hr> -->
+
+
+                </div>
+
+                <!-- <div class="card-bottom"> -->
+                  <% if (product[i].products.status =='cancelled' ||product[i].products.status=='Delivered'|| product[i].products.status=='return') { %>
+
+                 
+                    <%}else{%>
+                      <a style="cursor: pointer;" onclick="cancelOrder('<%=product[i].products.products. _id%>','<%=product[i]._id %>')">❌ CANCEL ORDER</a>
+                      <a style="cursor: pointer;" onclick="shipOrder('<%=product[i].products.products. _id%>','<%=product[i]._id %>') ">🚛 SHIPPED</a>
+
+                      <a style="cursor: pointer;" onclick="DeliverderOrder('<%=product[i].products.products. _id%>','<%=product[i]._id %>')">🤝 DELIVERED</a>
+                      <hr>
+                      <%}%>
+                    
+                      <%}%>
+
+
+                        <h4 style="margin-left: 826px; ">Total: <i class="fa-solid fa-indian-rupee-sign"></i><span>
+                          <%= product[0].totalAmount[0].total%>
+                        </span></h4>
+                <!-- </div> -->
+               
+
+            </div>
+
+
+            <!-- DeliverderOrder -->
+            <script>
+              function DeliverderOrder(productID,orderId){
+                $.ajax({
+                  url:'/deliver-order?id='+productID +'&orderid=' + orderId,
+                  method:'put',
+                  success:(response)=>{
+                    if (response.status) {
+                      window.location.reload()
+                    } else {
+                      alert('failed')
+                    }
+
+                  }
+                })
+              }
+            </script>
+
+            <!-- cancel-Order -->
+            <script>
+              function cancelOrder(productID,orderid) {
+                $.ajax({
+                  url: '/admin-cancel-order?id='+productID +'&orderid=' + orderid,
+                  method: 'put',
+                  success: (response) => {
+                    if (response.status) {
+                      window.location.reload()
+                    } else {
+                      alert('failed')
+                    }
+                  }
+
+                })
+              }
+            </script>
+
+
+            <!-- Ship-Order -->
+            <script>
+              function shipOrder(productID,orderId) {
+                $.ajax({
+                  url: '/admin-shipped?id='+productID +'&orderid=' + orderId,
+                  method: 'put',
+                  success: (response) => {
+                    console.log(response);
+                    if (response.status) {
+                      window.location.reload()
+                    } else {
+                      alert('failed')
+                    }
+                  }
+
+                })
+              }
+            </script>
+
+
+            <!-- Deliver-Order -->
+            <script>
+              function delivered(orderId) {
+                $.ajax({
+                  url: '/deliver-order?id=' + orderId,
+                  method: 'post',
+                  success: (response) => {
+                    if (response.deliveredOrder) {
+                      alert('order delivered')
+                      window.location.reload()
+                    } else {
+                      alert('failed')
+                    }
+                  }
+                })
+              }
+            </script>
+
+
+
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a
+                href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.
+              All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
+                class="ti-heart text-danger ml-1"></i></span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+
+  <!-- plugins:js -->
+  <script src="/adminassets/asset/vendors/js/vendor.bundle.base.js"></script>
+  <!-- plugins:js -->
+
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="/adminassets/asset/vendors/chart.js/Chart.min.js"></script>
+  <script src="/adminassets/asset/vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="/adminassets/asset/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <script src="/adminassets/asset/js/dataTables.select.min.js"></script>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="/adminassets/asset/js/off-canvas.js"></script>
+  <script src="/adminassets/asset/js/hoverable-collapse.js"></script>
+  <script src="/adminassets/asset/js/template.js"></script>
+  <script src="/adminassets/asset/js/settings.js"></script>
+  <script src="/adminassets/asset/js/todolist.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="/adminassets/asset/js/dashboard.js"></script>
+  <script src="/adminassets/asset/js/Chart.roundedBarCharts.js"></script>
+  <!-- End custom js for this page-->
+</body>
+
+</html>
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+
+  * {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: "Nunito", sans-serif;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background: whitesmoke;
+    overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    max-width: 100%;
+    min-width: 360px;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  hr {
+    border: 0.5px solid rgb(235, 235, 235);
+    margin: 0 30px;
+  }
+
+  header {
+    margin-top: 40px;
+    height: 40px;
+  }
+
+  header h1 {
+    font-size: 36px;
+    display: inline-block;
+    opacity: 80%;
+    text-align: center;
+    padding: 10px 10px 10px 40px;
+    vertical-align: middle;
+  }
+
+  header p {
+    display: inline-block;
+    font-size: 12px;
+    padding: 10px;
+    color: gray;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .container {
+    width: 96%;
+    background: white;
+    margin: 50px auto;
+    position: relative;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 30px 20px 50px;
+  }
+
+  .heading {
+    height: 60px;
+    position: relative;
+  }
+
+  .odetails-1 {
+    background: rgb(225, 225, 225);
+    padding: 6px 14px;
+    display: inline;
+    border: none;
+    border-radius: 20px;
+  }
+
+  .odetails-1 p {
+    display: inline-block;
+    font-size: 13px;
+  }
+
+  .odetails-1 p:nth-child(2) {
+    color: blue;
+  }
+
+  .odetails-2 {
+    margin-top: 10px;
+    display: inline-block;
+  }
+
+  .odetails-2 p {
+    color: gray;
+    display: inline;
+    font-size: 12px;
+    margin-left: 20px;
+  }
+
+  .heading button {
+    position: absolute;
+    top: -5px;
+    right: 0;
+    margin-right: 10px;
+    background: #644dbd;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 8px 20px 8px 32px;
+    color: white;
+    border-radius: 20px;
+  }
+
+  .heading button i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    left: 10px;
+  }
+
+  .card-container {
+    width: 100%;
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .card {
+    height: 160px;
+    width: 96%;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .card .img {
+    width: 150px;
+    height: 150px;
+    display: inline;
+  }
+
+  .card .img img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .card .parent {
+    position: absolute;
+    left: 150px;
+    top: 0;
+  }
+
+  .card .content {
+    position: relative;
+    width: 240px;
+    display: inline-block;
+    padding: 10px 10px;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    vertical-align: top;
+  }
+
+  .card .content .details-1 {
+    width: 200px;
+    display: block;
+  }
+
+  .card .content .details-1 h1 {
+    font-size: 13px;
+    width: 100%;
+  }
+
+  .card .content .details-1 p {
+    font-size: 11px;
+    color: gray;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .card .content .details-2 {
+    display: block;
+    margin-top: 30px;
+  }
+
+  .card .content .details-2 p {
+    display: inline;
+    color: gray;
+    font-size: 12px;
+  }
+
+  .card .content .details-2 p:nth-child(3) {
+    display: inline;
+    color: gray;
+    font-size: 12px;
+    padding-left: 5px;
+  }
+
+  .card .content .details-2 p:nth-child(3) {
+    color: black;
+    padding-left: 8px;
+  }
+
+  .status {
+    display: inline-block;
+    width: 200px;
+    padding: 10px 10px;
+    margin-left: 40px;
+  }
+
+  .status .sec1 {
+    display: block;
+  }
+
+  .status .sec1 p {
+    color: gray;
+    font-size: 12px;
+  }
+
+  .status .sec1 h2 {
+    color: #644dbd;
+    font-size: 16px;
+  }
+
+  .status .sec2 {
+    display: block;
+    margin-top: 15px;
+  }
+
+  .status .sec2 p {
+    color: gray;
+    font-size: 12px;
+  }
+
+  .status .sec2 h3 {
+    color: #644dbd;
+    font-size: 16px;
+  }
+
+  .card-bottom {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+  }
+
+  .card-bottom button {
+    background: none;
+    outline: none;
+    border: none;
+    border-right: 2px solid rgb(235, 235, 235);
+    padding: 10px 14px;
+    color: gray;
+    font-size: 12px;
+    cursor: pointer;
+    margin-left: 20px;
+    display: inline;
+  }
+
+  .card-bottom h1 {
+    font-size: 15px;
+    display: inline;
+    float: right;
+    opacity: 88%;
+    padding: 8px 10px;
+    margin-right: 20px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      padding: 30px 10px 50px;
+    }
+
+    .heading button p {
+      display: none;
+    }
+
+    .heading button {
+      padding: 18px;
+      border-radius: 50%;
+    }
+
+    .heading button i {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .card .content .details-1 {
+      width: 160px;
+    }
+
+    .status {
+      display: none;
+    }
+
+    .card.toggle {
+      height: 300px;
+      transform-origin: top;
+      transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .card.toggle .status {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+      margin-left: 0;
+      text-align: start;
+    }
+
+    .card .content .details-2 {
+      margin-top: 20px;
+    }
+
+    .card .content .details-2 p:nth-child(3) {
+      padding: 0;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .odetails-2 {
+      display: block;
+    }
+
+    header p {
+      padding: 0 0 0 40px;
+    }
+
+    .container {
+      margin-top: 70px;
+    }
+  }
+</style>

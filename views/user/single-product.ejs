@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+<!-- zommmmmmmmmm -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<!-- title -->
+	<title>Single Product</title>
+	
+	<!-- ajax -->
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="assets/img/favicon.png">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="/assets/css/all.min.css">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="/assets/css/owl.carousel.css">
+	<!-- zooooooooooom -->
+	<link rel="stylesheet" href="/stylesheets/zoomstyle.css">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="/assets/css/animate.css">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="/assets/css/meanmenu.min.css">
+	<!-- main style -->
+	<link rel="stylesheet" href="/assets/css/main.css">
+	<!-- responsive -->
+	<link rel="stylesheet" href="/assets/css/responsive.css">
+
+</head>
+<body>
+	
+	<!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+	
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="">
+								<img src="assets/img/logo.png" alt="">
+							</a>
+						</div>
+						<!-- logo -->
+
+						<!-- menu start -->
+						<nav class="main-menu">
+							<ul>
+								<li class="current-list-item"><a href="/">Home</a>
+									<!-- <ul class="sub-menu">
+										<li><a href="index.html">Static Home</a></li>
+										<li><a href="index_2.html">Slider Home</a></li>
+									</ul> -->
+								</li>
+								<!-- <li><a href="contact.html">Contact</a></li> -->
+								<li><a href="/shop">Shop</a>
+									<!-- <ul class="sub-menu">
+										<li><a href="shop.html">Shop</a></li>
+										<li><a href="checkout.html">Check Out</a></li>
+										<li><a href="single-product.html">Single Product</a></li>
+										<li><a href="cart.html">Cart</a></li>
+									</ul> -->
+								</li>
+								<%if (user){%>
+									<li style="color:white; font-weight: 700;"> Hi <%= user.Username%>
+											<ul class="sub-menu">
+												<li><a href="/logout">logout</a></li>
+												<li><a href="/profile">Profile</a></li>
+												<li><a href="/order-details">Order</a></li>
+											</ul>
+									</li>
+									<%}else{%>
+										<li><a href="/login">Login</a></li>
+										<%}%>
+								
+								<!-- <li><a href="about.html">About</a></li> -->
+								<!-- <li><a href="#">Pages</a>
+									<ul class="sub-menu">
+										<li><a href="404.html">404 page</a></li>
+										<li><a href="about.html">About</a></li>
+										<li><a href="cart.html">Cart</a></li>
+										<li><a href="checkout.html">Check Out</a></li>
+										<li><a href="contact.html">Contact</a></li>
+										<li><a href="news.html">News</a></li>
+										<li><a href="shop.html">Shop</a></li>
+									</ul>
+								</li>
+								<li><a href="news.html">News</a>
+									<ul class="sub-menu">
+										<li><a href="news.html">News</a></li>
+										<li><a href="single-news.html">Single News</a></li>
+									</ul>
+								</li> -->
+								<li>
+									<div class="header-icons">
+										<a class="shopping-cart" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+
+										
+										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+									</div>
+								</li>
+							</ul>
+						</nav>
+						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+						<div class="mobile-menu"></div>
+						<!-- menu end -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+	<!-- search area -->
+	<div class="search-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<span class="close-btn"><i class="fas fa-window-close"></i></span>
+					<div class="search-bar">
+						<div class="search-bar-tablecell">
+							<h3>Search For:</h3>
+							<input type="text" placeholder="Keywords">
+							<button type="submit">Search <i class="fas fa-search"></i></button>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+	<!-- end search arewa -->
+	
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>See more Details</p>
+						<h1>Single Product</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- single product -->
+	<div class="single-product mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					 <div class="single-product-img">
+						<!-- <img src="/adminassets/asset/product-images<%=product._id%>.jpg" alt=""> -->
+					</div> 
+					<!-- zoommmmmmmmmmmmmmm sibi -->
+					<style>
+						.multiple_image{
+							display: flex;
+						}
+					</style>
+					<div class="wrapper ">
+						<div style="margin-right: 50%; background-color: white;" class="block" >
+							<img id="main-image" src="<%=product.Image1%>" alt="Image To Zoom" class="block__pic" data-title="" data-help="" id="main_image">
+						
+						<div class=" text-center"> 
+							<img onclick="change_image(this)" src="<%=product.Image1%>" style="width: 75px;height: 75px; border: 2px solid;">
+							<img onclick="change_image(this)" src="<%=product.Image2%>" style="width: 75px;height: 75px;border: 2px solid;">
+							<img onclick="change_image(this)" src="<%=product.Image3%>" style="width: 75px;height: 75px; border: 2px solid;">
+							</div>
+                                                        <script>
+                                                            function change_image(image){
+                                                var container = document.getElementById("main-image");
+                                                container.src = image.src;
+                                                }
+                                                document.addEventListener("DOMContentLoaded", function(event) {
+                                                });
+                                                 </script>
+					</div>
+						
+						
+		  </div>
+		  <!-- enddddddddddddd -->
+
+		  <!-- <script>
+			image1 = document.getElementById('image1').src
+			image2 = document.getElementById('image2').src
+			image3 = document.getElementById('image3').src
+
+			function image1(){
+				document.getElementById('main_image').src = image1
+			}
+			function image2(){
+				document.getElementById('main_image').src = image2
+			}
+			function image3(){
+				document.getElementById('main_image').src = image3
+			}
+		  </script> -->
+
+
+				</div>
+				<div class="col-md-7">
+					<div class="single-product-content mt-150">
+						
+						
+						<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.</p> -->
+						
+						</div>
+						<h3><%= product.Name%></h3>
+						<p class="single-product-pricing"><span>Per Kg</span> 
+							<!-- <%= product.Price%> -->
+							
+							<% if (product.Price> product.CategoryOffer && product.ProductOffer >
+							product.CategoryOffer) { %>
+							<p>
+								<b>
+									<s>
+										<span><i class="fas fa-rupee-sign"></i></span>	<%=product.Price%>
+									</s>&nbsp;
+									<span><i class="fas fa-rupee-sign"></i></span><%=product.CategoryOffer%>
+								</b>
+							</p>
+								<%}%>
+
+
+									<% if (product.Price> product.ProductOffer && product.CategoryOffer
+										> product.ProductOffer) { %>
+										<p>
+											<b>
+												<del>
+													<span><i class="fas fa-rupee-sign"></i></span>	<%=product.Price%>
+												</del>&nbsp;
+												<span><i class="fas fa-rupee-sign"></i></span>	<%=product.ProductOffer%>
+											</b>
+										</p>
+											<%} else { %>
+
+												<% } %>
+
+
+													<% if (product.Price <=product.ProductOffer &&
+														product.Price <=product.CategoryOffer) { %>
+															<p>
+																<b>
+																	<span><i class="fas fa-rupee-sign"></i></span>		<%=product.Price%>
+																</b>
+															</p>
+														
+															<%} else { %>
+
+																<% } %>
+
+
+						</p>
+						<div class="single-product-form">
+							<form action="#">
+							
+							</form>
+						
+							
+
+							<a onclick="addToCart('<%= product._id%>')"
+								class="cart-btn"><i
+									class="fas fa-shopping-cart"></i>
+								Add to Cart</a>
+							<p><strong>Categories: </strong><%= product.Category%>, Organic</p>
+						<!-- <h4>Share:</h4>
+						<ul class="product-share">
+							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href=""><i class="fab fa-twitter"></i></a></li>
+							<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+							<li><a href=""><i class="fab fa-linkedin"></i></a></li>
+						</ul> -->
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+			<script>
+				function addToCart(proId) {
+					$.ajax({
+						url: '/add-to-cart?id=' + proId,
+						method: 'get',
+						success: (response) => {
+							console.log(response);
+							if (response.status) {
+								Swal.fire({
+									position: 'center',
+									icon: 'success',
+									title: 'Item Has Been Added To Cart',
+									showConfirmButton: false,
+									timer: 1500
+								})
+							}
+						}
+					})
+				}
+
+			</script>
+	<!-- end single product -->
+
+	<!-- more products -->
+	<div class="more-products mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">	
+						<h3><span class="orange-text">Related</span> Products</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="row">
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="assets/img/products/product-img-1.jpg" alt=""></a>
+						</div>
+						<h3>Strawberry</h3>
+						<p class="product-price"><span>Per Kg</span> 85$ </p>
+						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="assets/img/products/product-img-2.jpg" alt=""></a>
+						</div>
+						<h3>Berry</h3>
+						<p class="product-price"><span>Per Kg</span> 70$ </p>
+						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="assets/img/products/product-img-3.jpg" alt=""></a>
+						</div>
+						<h3>Lemon</h3>
+						<p class="product-price"><span>Per Kg</span> 35$ </p>
+						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+					</div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+	<!-- end more products -->
+
+	<!-- logo carousel -->
+	<div class="logo-carousel-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="logo-carousel-inner">
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/1.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/2.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/3.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/4.png" alt="">
+						</div>
+						<div class="single-logo-item">
+							<img src="assets/img/company-logos/5.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end logo carousel -->
+
+	<!-- footer -->
+	<div class="footer-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box about-widget">
+						<h2 class="widget-title">About us</h2>
+						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box get-in-touch">
+						<h2 class="widget-title">Get in Touch</h2>
+						<ul>
+							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>
+							<li>support@fruitkha.com</li>
+							<li>+00 111 222 3333</li>
+						</ul>
+					</div>
+				</div>
+				<!-- <div class="col-lg-3 col-md-6">
+					<div class="footer-box pages">
+						<h2 class="widget-title">Pages</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="services.html">Shop</a></li>
+							<li><a href="news.html">News</a></li>
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+					</div>
+				</div> -->
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-box subscribe">
+						<h2 class="widget-title">Subscribe</h2>
+						<p>Subscribe to our mailing list to get the latest updates.</p>
+						<form action="">
+							<input type="email" placeholder="Email">
+							<button type="submit"><i class="fas fa-paper-plane"></i></button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end footer -->
+	
+	<!-- copyright -->
+	<div class="copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-md-12">
+					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.<br>
+						Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+					</p>
+				</div>
+				<div class="col-lg-6 text-right col-md-12">
+					<div class="social-icons">
+						<ul>
+							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end copyright -->
+	
+<!-- zooooooooooom -->
+	
+	
+<!-- jquery -->
+	<script src="/assets/js/jquery-1.11.3.min.js"></script>
+	<!-- bootstrap -->
+	<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+	<!-- count down -->
+	<script src="/assets/js/jquery.countdown.js"></script>
+	<!-- isotope -->
+	<script src="/assets/js/jquery.isotope-3.0.6.min.js"></script>
+	<!-- waypoints -->
+	<script src="/assets/js/waypoints.js"></script>
+	<!-- owl carousel -->
+	<script src="/assets/js/owl.carousel.min.js"></script>
+	<!-- magnific popup -->
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<!-- mean menu -->
+	<script src="/assets/js/jquery.meanmenu.min.js"></script>
+	<!-- sticker js -->
+	<script src="/assets/js/sticker.js"></script>
+	<!-- main js -->
+	<script src="/assets/js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha384-JUMjoW8OzDJw4oFpWIB2Bu/c6768ObEthBMVSiIx4ruBIEdyNSUQAjJNFqT5pnJ6" crossorigin="anonymous"></script>
+	<script src="/javascripts/script.js"></script>
+	<script src="/javascripts/zoomsl.js"></script>
+
+
+</body>
+</html>

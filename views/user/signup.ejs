@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/signup.css">
+
+<body>
+    <form name="formvalidation" id="formvalidation" class="box" action="/signup" method="POST">
+        <h1>Sign up</h1>
+        <% if(mailerr){%>
+            <p style="color: red;">Email Id Already Exist</p>
+            <%}%>
+            <% if(mobilerr){%>
+                <p style="color: red;">Mobile Number Already Exist</p>
+                <%}%>
+
+            
+        <input type="text" id="Username" placeholder="Username" name="Username" required>
+        <input type="text" id="Mobile" placeholder="Mobile" name="Mobile" required>
+        <input type="email" id="Email" placeholder="Email" name="Email" required>
+        <input type="password" id="Password" placeholder="Password" name="Password" required>
+        <input type="password" id="Confirmpassword" placeholder="confirm password" name="Confirmpassword" required>
+        <input type="submit" value="Create Account" placeholder="Sign Up">
+        <a href="/login">Already have one?</a>
+    </form>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+        integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script>
+        jQuery('#formvalidation').validate({
+            rules: {
+                Username: "required",
+                Email: {
+                    required: true,
+                    email:true,
+                },
+                Password: {
+                    required: true,
+                    minlength: 5
+                },
+                Confirmpassword: {
+                    required:true,
+                    equalTo : "#Password"
+                },
+                Mobile: {
+                    required: true,
+                    minlength: 10,
+                    maxlength:10
+                }
+            }, messages: {
+                Username: "Please enter your name",
+                Email: {
+                    required: "Please enter email",
+                    Email: "Please enter valid email",
+                },
+                Password: {
+                    required: "Please enter your password",
+                    minlength: "Password must be 5 char long"
+                },
+                Confirmpassword:{
+                    required: "Please enter your password",
+                    equalTo : "make sure your password is match"
+        },
+            Mobile: {
+            required: "Please enter your Mobile number",
+            minlength: "Mobile must be 10 digit",
+            maxlength:"Mobile must be 10 digit"
+        }
+	},
+            submitHandler: function (form) {
+                form.submit();
+            }
+}); 
+    </script>
+</body>
+
+</html>
+</head>
+
+</html>

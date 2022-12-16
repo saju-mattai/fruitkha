@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/stylesheets/my-orders.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        font-family: "Nunito", sans-serif;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        background: whitesmoke;
+        overflow-x: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        max-width: 100%;
+        min-width: 360px;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    hr {
+        border: 0.5px solid rgb(235, 235, 235);
+        margin: 0 30px;
+    }
+
+    header {
+        margin-top: 40px;
+        height: 40px;
+    }
+
+    header h1 {
+        font-size: 36px;
+        display: inline-block;
+        opacity: 80%;
+        text-align: center;
+        padding: 10px 10px 10px 40px;
+        vertical-align: middle;
+    }
+
+    header p {
+        display: inline-block;
+        font-size: 12px;
+        padding: 10px;
+        color: gray;
+        vertical-align: middle;
+        text-align: center;
+    }
+
+    .containers {
+        width: 96%;
+        background: white;
+        margin: 23px auto;
+        position: relative;
+        box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+        padding: 21px 35px 64px;
+    }
+
+    .heading {
+        height: 60px;
+        position: relative;
+    }
+
+    .odetails-1 {
+        background: rgb(225, 225, 225);
+        padding: 6px 14px;
+        display: inline;
+        border: none;
+        border-radius: 20px;
+    }
+
+    .odetails-1 p {
+        display: inline-block;
+        font-size: 13px;
+    }
+
+    .odetails-1 p:nth-child(2) {
+        color: blue;
+    }
+
+    .odetails-2 {
+        margin-top: 10px;
+        display: inline-block;
+    }
+
+    .odetails-2 p {
+        color: gray;
+        display: inline;
+        font-size: 12px;
+        margin-left: 20px;
+    }
+
+    .heading button {
+        position: absolute;
+        top: -5px;
+        right: 0;
+        margin-right: 10px;
+        background: #644dbd;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        font-size: 12px;
+        padding: 8px 20px 8px 32px;
+        color: white;
+        border-radius: 20px;
+    }
+
+    .heading button i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 18px;
+        left: 10px;
+    }
+
+    .card-containers {
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .card {
+        height: 160px;
+        width: 96%;
+        margin: 0 auto;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        overflow: hidden;
+        transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    .card .img {
+        width: 150px;
+        height: 150px;
+        display: inline;
+    }
+
+    .card .img img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .card .parent {
+        position: absolute;
+        left: 150px;
+        top: 0;
+    }
+
+    .card .content {
+        position: relative;
+        width: 240px;
+        display: inline-block;
+        padding: 10px 10px;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        vertical-align: top;
+    }
+
+    .card .content .details-1 {
+        width: 200px;
+        display: block;
+    }
+
+    .card .content .details-1 h1 {
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .card .content .details-1 p {
+        font-size: 11px;
+        color: gray;
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    .card .content .details-2 {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .card .content .details-2 p {
+        display: inline;
+        color: gray;
+        font-size: 12px;
+    }
+
+    .card .content .details-2 p:nth-child(3) {
+        display: inline;
+        color: gray;
+        font-size: 12px;
+        padding-left: 5px;
+    }
+
+    .card .content .details-2 p:nth-child(3) {
+        color: black;
+        padding-left: 8px;
+    }
+
+    .status {
+        display: inline-block;
+        width: 200px;
+        padding: 10px 10px;
+        margin-left: 40px;
+    }
+
+    .status .sec1 {
+        display: block;
+    }
+
+    .status .sec1 p {
+        color: gray;
+        font-size: 12px;
+    }
+
+    .status .sec1 h2 {
+        color: #644dbd;
+        font-size: 16px;
+    }
+
+    .status .sec2 {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .status .sec2 p {
+        color: gray;
+        font-size: 12px;
+    }
+
+    .status .sec2 h3 {
+        color: #644dbd;
+        font-size: 16px;
+    }
+
+    .card-bottom {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        bottom: 8px;
+        transform: translateX(-50%);
+    }
+
+    .card-bottom button {
+        background: none;
+        outline: none;
+        border: none;
+        border-right: 2px solid rgb(235, 235, 235);
+        padding: 10px 14px;
+        color: gray;
+        font-size: 12px;
+        cursor: pointer;
+        margin-left: 58px;
+        display: inline;
+    }
+
+    .card-bottom h1 {
+        font-size: 15px;
+        display: inline;
+        float: right;
+        opacity: 88%;
+        padding: 8px 10px;
+        margin-right: 20px;
+    }
+
+    @media screen and (max-width: 800px) {
+        .containers {
+            padding: 30px 10px 50px;
+        }
+
+        .heading button p {
+            display: none;
+        }
+
+        .heading button {
+            padding: 18px;
+            border-radius: 50%;
+        }
+
+        .heading button i {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card .content .details-1 {
+            width: 160px;
+        }
+
+        .status {
+            display: none;
+        }
+
+        .card.toggle {
+            height: 300px;
+            transform-origin: top;
+            transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .card.toggle .status {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            margin-left: 0;
+            text-align: start;
+        }
+
+        .card .content .details-2 {
+            margin-top: 20px;
+        }
+
+        .card .content .details-2 p:nth-child(3) {
+            padding: 0;
+            display: block;
+            margin-top: 5px;
+        }
+
+        .odetails-2 {
+            display: block;
+        }
+
+        header p {
+            padding: 0 0 0 40px;
+        }
+
+        .containers {
+            margin-top: 70px;
+        }
+    }
+</style>
+
+
+<body class="goto-here">
+    <!-- <div class="py-1 bg-black">
+        <div class="container">
+            <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+                <div class="col-lg-12 d-block">
+                    <div class="row d-flex">
+                        <div class="col-md pr-4 d-flex topper align-items-center">
+                            <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
+                                    class="icon-phone2"></span></div>
+                            <span class="text">+ 1235 2355 98</span>
+                        </div>
+                        <div class="col-md pr-4 d-flex topper align-items-center">
+                            <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
+                                    class="icon-paper-plane"></span></div>
+                            <span class="text">youremail@email.com</span>
+                        </div>
+                        <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+                            <span class="text">3-5 Business days delivery &amp; Free Returns</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- <nav class="navbar navbar-expand-lg navbar-dark  ftco-navbar-light" id="ftco-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="/" style="color:black">FashioNova</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
+                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Shop</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="/shop">Shop</a>
+                            <a class="dropdown-item" href="/product-single">Single Product</a>
+                            <a class="dropdown-item" href="/cart">Cart</a>
+                            <a class="dropdown-item" href="/checkout">Checkout</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item cta cta-colored"><a href="/cart" class="nav-link"><span
+                                class="icon-shopping_cart"></span>[<span>0</span>]</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+    <!-- END nav -->
+
+
+    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_6.jpg');">
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center">
+                <div class="col-md-9 ftco-animate text-center">
+                    <p class="breadcrumbs "><span class="mr-2"> <a href="/"><button  type="button" class="btn btn-danger">Home</button></a></span>
+                    <h1 class="mb-0 bread">My Orders</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- my-orders -->
+
+    <section class="ftco-section ftco-cart">
+
+        <div class="containers">
+            <div class="row">
+                <div class="content-wrapper">
+                    <div class="row">
+
+
+                        <%for(var i=0; i < order.length; i++){%>
+
+                            <div class="containers">
+
+                                <div class="heading">
+                                    <div class="odetails-1">
+                                        <p><b>Order</b></p>
+                                      <p> <%= order[i]._id%></p> 
+                                    
+                                    </div>
+                                    <div class="odetails-2">
+
+                                    </div>
+
+
+                                </div>
+
+
+                                <hr>
+
+                                <div class="card-containers">
+                                    <div class="card">
+                                        <div class="img">
+                                            <img src="<%=order[i].result.Image1%>" alt="">
+                                        </div>
+                                        <div class="parent">
+                                            <div class="content">
+                                                <div class="details-1">
+                                                    <p><h6> Name: <%= order[i].products.products.Name %> </h6></p>
+                                                    <p><h6> Price: <%= order[i].products.products.Price %> </h6></p>
+                                                    <p><h6> quantity: <%= order[i].products. quantity %> </h6></p>
+                                                </div>
+                                                <div class="details-2">                    
+                                                </div>
+                                        
+                                            </div>
+                                            <div class="status">
+                                                
+                                                <div class="sec1">
+                                                    <h6>Status</h6>
+                                                    <h6>
+                                                        <%= order[i].status%>
+                                                    </h6>
+                                                    
+                                                </div>
+                                                <div class="sec2">
+                                                    <h6>paymentMethod:<%=order[i].paymentMethod%></h6>
+
+                                                </div>
+                                            </div>
+                                            <div class="status">
+                                                <div class="sec1">
+                                                    <h6>Address</h6>
+                                                   
+                                                   
+                                                    <h6><%= order[i].delivaryDetails.name%></h6>
+                                                    <h6><%= order[i].delivaryDetails.pincode%></h6>
+                                                    <h6><%= order[i].delivaryDetails.address%></h6>
+                                                    
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <hr>
+
+
+                                </div>
+
+
+
+
+
+                                <div class="card-bottom">
+                                    <% if (order[i].status != 'cancelled') { %>
+                                        <a href="/cancel-order/<%= order[i]._id%>"><button  > ❌ CANCEL ORDER</button></a>
+                                        <% } %>
+                                        
+                                   
+
+                                        <h1>Total:<%=order[i].totalAmount[0].total%><i class="fa-solid fa-indian-rupee-sign"></i><span></span></h1>
+                                </div>
+
+                            </div>
+                            <%}%>
+
+
+
+                                <!-- cancel-Order -->
+                                <script>
+                                    function cancelOrder(orderId) {
+                                        $.ajax({
+                                            url: '/cancel-orders?id=' + orderId,
+
+                                            method: 'post',
+                                            success: (response) => {
+                                                if (response.cancelOrder) {
+                                                    alert('order cancelled')
+                                                    window.location.reload()
+                                                } else {
+                                                    alert('failed')
+                                                }
+                                            }
+
+                                        })
+                                    }
+                                </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+    <!-- <footer class="ftco-footer bg-light ftco-section">
+      <div class="container">
+      	<div class="row">
+      		<div class="mouse">
+						<a href="#" class="mouse-icon">
+							<div class="mouse-wheel"><span class="ion-ios-arrow-up"></span></div>
+						</a>
+					</div>
+      	</div>
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Winkel</h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Menu</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Shop</a></li>
+                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="#" class="py-2 d-block">Journal</a></li>
+                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Help</h2>
+              <div class="d-flex">
+	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
+	                <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
+	                <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
+	                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
+	                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
+	              </ul>
+	              <ul class="list-unstyled">
+	                <li><a href="#" class="py-2 d-block">FAQs</a></li>
+	                <li><a href="#" class="py-2 d-block">Contact</a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p>Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <!-- Copyright &copy;
+    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i
+        class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
+        target="_blank">Colorlib</a>
+    Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    <!-- </p>
+    </div>
+    </div>
+    </div>
+    </footer> -->
+
+
+
+    <!-- loader -->
+    <!-- <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+            <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+            <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+                stroke="#F96D00" />
+        </svg></div> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
+
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var quantitiy = 0;
+            $('.quantity-right-plus').click(function (e) {
+
+                // Stop acting like a button
+                e.preventDefault();
+                // Get the field name
+                var quantity = parseInt($('#quantity').val());
+
+                // If is not undefined
+
+                $('#quantity').val(quantity + 1);
+
+                // Increment
+
+            });
+            $('.quantity-left-minus').click(function (e) {
+                // Stop acting like a button
+                e.preventDefault();
+                // Get the field name
+                var quantity = parseInt($('#quantity').val());
+
+                // If is not undefined
+
+                // Increment
+                if (quantity > 0) {
+                    $('#quantity').val(quantity - 1);
+                }
+            });
+
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+     
+</body>
+
+</html>

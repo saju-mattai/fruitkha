@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/signup.css">
+
+<body>
+    <form class="box" id="formvalidation" action="/login" method="POST">
+
+        <h1>Login</h1>
+        <%if(Logerr){%>
+            <p class="erorr" style="color: rgb(230, 8, 8);">Invalid Email Or Password</p>
+            <% } %>
+            <%if(blockerr) { %>
+                <p class="erorr" style="color: rgb(230, 8, 8);"> Administrator Restricted Your Entry </p>
+                <% } %>
+                <!-- <input type="text" placeholder="Username">
+        <input type="int" placeholder="Mobile"> -->
+                <input type="text" id="Email" placeholder="Email" name="Email" required>
+                <input type="password" placeholder="Password" name="Password" required>
+                <input type="submit" id="Password" value="Login" placeholder="Login">
+                <div><a href="/signup">Don't have an account?</a></div>
+                <div style="color:rgb(247, 245, 242);">or</div>
+                <a href="/otplogin">Login With OTP</a>
+                <a href="/forgot-passoword">Forgot Passowrd?</a>
+    </form>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+    integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script>
+         jQuery('#formvalidation').validate({
+            rules: {
+                Email: {
+                    required: true,
+                    email: true
+                },
+                Password: {
+                    required: true,
+                    minlength: 3
+                }
+            }, messages: {
+                Email: {
+                    required: "Please enter Email",
+                    email: "Please enter valid email",
+                },
+                Password: {
+                    required: "Please Enter your password",
+                    minlength: "Password must be 3 digits"
+                }
+	},
+            submitHandler: function (form) {
+                form.submit();
+            }
+}); 
+       
+    </script>
+</body>
+
+</html>
+</head>
+
+</html>
