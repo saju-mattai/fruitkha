@@ -3,7 +3,7 @@ const state={
     db:null
 }
 
-module.exports.connect=function(done){
+module.exports.connect=function(done){ 
     const url='mongodb+srv://saju:9061928072@fruitkha.xe7r9y7.mongodb.net/?retryWrites=true&w=majority'
     const dbname='ecommerce'
 
