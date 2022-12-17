@@ -116,9 +116,8 @@ exports.cancelorder = (req, res) => {
                 console.log("qwertyuiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
                 console.log(newvalue.newstatus);
                 let total = await carthelper.getTotalAmount(req.session.user._id)
+                let orgTotal = total
                 if (newvalue.newstatus == true) {
-                    console.log(couponAmount);
-                    console.log("couponAmount");
                     total = parseInt(total) - parseInt(couponAmount);
                 } else {
                     couponAmount = 0;
