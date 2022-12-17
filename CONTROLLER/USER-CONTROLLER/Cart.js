@@ -113,8 +113,7 @@ exports.cancelorder = (req, res) => {
                 } else {
                     couponAmount = 0;
                 }
-                console.log("qwertyuiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-                console.log(newvalue.newstatus);
+              
                 let total = await carthelper.getTotalAmount(req.session.user._id)
                 let orgTotal = total
                 if (newvalue.newstatus == true) {
@@ -207,7 +206,7 @@ exports.viewsingleorderuser = async (req, res) => {
         if (req.session.user) {
             let user = req.session.user
             product = await carthelper.getSingleProductList(req.params.id)
-            console.log(product[0].products.status);
+           
             res.render('view-singleorder-user', { product, total, user })
         } else {
             res.redirect('/')
