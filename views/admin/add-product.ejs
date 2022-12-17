@@ -338,14 +338,15 @@
                 <li class="nav-item"> <a class="nav-link" href="/add-product">Add Products</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/add-category">Add Category</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/view-category">View Category</a></li>
+                
               </ul>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false"
-              aria-controls="form-elements">
-              <i class="icon-columns menu-icon"></i>
-              <span class="menu-title">User Management</span>
+            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+              <!-- <i class="icon-columns menu-icon"></i> -->
+              <i class="fa-solid fa-user" ></i>
+              <span class="menu-title" style="margin-left: 1em;">User Management</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="form-elements">
@@ -374,11 +375,58 @@
             </a>
             <div class="collapse" id="tables">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="/admin">Coupons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/add-coupon"> Add Coupons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/view-coupon"> View Coupons</a></li>
               </ul>
             </div>
           </li>
 
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#table" aria-expanded="false" aria-controls="tables">
+              <!-- <i class="icon-grid-2 menu-icon"></i> -->
+              <i class="fas fa-file" ></i>
+              <span class="menu-title" style="margin-left: 1em;">Sales Report</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="table">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="/reports"> All Reports</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/reports-monthly"> Monthly Reports</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/reports-weekly"> Weekly Reports</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#charts2" aria-expanded="false" aria-controls="charts">
+              <i class="icon-bar-graph menu-icon"></i>
+              <!-- <i class="fa-light fa-badge-percent"></i> -->
+              <span class="menu-title" >Offer Management</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts2">
+              <ul class="nav flex-column sub-menu">
+               <li class="nav-item"> <a class="nav-link" href="/Category-offer">Category Offer</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/Product-Offer">Product Offer</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#charts3" aria-expanded="false" aria-controls="charts">
+              <!-- <i class="icon-layout menu-icon"></i> -->
+              <i class="fas fa-image"></i>
+              <span class="menu-title" style="margin-left: 1em;">Banners</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="charts3">
+              <ul class="nav flex-column sub-menu">
+               <li class="nav-item"> <a class="nav-link" href="/add-banner">Add Banner</a></li>
+                <!-- <li class="nav-item"> <a class="nav-link" href="/Product-Offer">Banner Details</a></li> -->
+              </ul>
+            </div>
+          </li>
+         
         </ul>
       </nav>
       <!-- partial -->

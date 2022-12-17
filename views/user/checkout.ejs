@@ -496,7 +496,9 @@
 
 
 						if ('<%=wallet%>' != undefined) {
-							if ('<%=orgTotal%>' > '<%=wallet.amount %>') {
+							console.log('<%= total%>');
+							console.log('<%=wallet.amount %>');
+							if (parseInt('<%= total%>' )> parseInt('<%=wallet.amount %>')) {
 								walletAlert()
 							} else {
 								orderplaced('Order Placed')

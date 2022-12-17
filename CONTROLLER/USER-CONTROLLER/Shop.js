@@ -33,7 +33,7 @@ exports.Shop = async (req, res) => {
       res.redirect("/logout")
 
     }
-  } catch (error) {
+  } catch (error) { 
     res.redirect('/404')
   }
 

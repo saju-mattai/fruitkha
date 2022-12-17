@@ -32,7 +32,7 @@ exports.Cart = async (req, res) => {
             let validuser = await db.get().collection(collection.USER_COLLECTION).findOne({ Email: user.Email })
             if (validuser.loginstatus) {
                 let product = await userhelper.GetCartProducts(req.session.user._id)
-               
+
                 let allproduct = await carthelper.getallproduct(req.session.user._id)
 
 
@@ -50,7 +50,7 @@ exports.Cart = async (req, res) => {
                 }
 
                 res.render('cart', { product, user: req.session.user._id, total, user });
-                
+
             } else {
                 res.redirect('/')
             }
@@ -115,8 +115,11 @@ exports.cancelorder = (req, res) => {
                 }
                 console.log("qwertyuiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
                 console.log(newvalue.newstatus);
+                let total = await carthelper.getTotalAmount(req.session.user._id)
                 if (newvalue.newstatus == true) {
-
+                    console.log(couponAmount);
+                    console.log("couponAmount");
+                    total = parseInt(total) - parseInt(couponAmount);
                 } else {
                     couponAmount = 0;
                 }
@@ -125,7 +128,7 @@ exports.cancelorder = (req, res) => {
                 let user = req.session.user
 
                 if (wallet == null) {
-                    wallet = {
+                    wallet = { 
                         amount: 0
                     }
                     wallet;
@@ -166,8 +169,12 @@ exports.placeorderPost = async (req, res) => {
 
             } else if (req.body.paymentMethod === 'wallet') {
                 if (wallet.amount < total) {
+                    
 
                 } else {
+                    console.log(wallet.amount);
+                    console.log('total');
+                    console.log(total);
                     let placeorder = await carthelper.placeOrder(req.body, product, total, newvalue.newcoupon, req.session.user._id, wallet).then((orderId) => {
                         req.session.orderid = orderId.insertedId;
                     })
