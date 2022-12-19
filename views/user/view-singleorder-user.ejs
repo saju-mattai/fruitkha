@@ -98,23 +98,23 @@
 								</li> -->
                 <!-- <li><a href="/contact">Contact</a></li> -->
                 <%if (user){%>
-									<li style="color:white; font-weight: 700;"> Hi <%= user.Username%>
-											<ul class="sub-menu">
-												<li><a href="/logout">logout</a></li>
-												<li><a href="/profile">Profile</a></li>
-												<li><a href="/order-details">Order</a></li>
-											</ul>
-									</li>
-									<%}else{%>
-										<li><a href="/login">Login</a></li>
-										<%}%>
+                  <li style="color:white; font-weight: 700;"> Hi <%= user.Username%>
+                      <ul class="sub-menu">
+                        <li><a href="/logout">logout</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                        <li><a href="/order-details">Order</a></li>
+                      </ul>
+                  </li>
+                  <%}else{%>
+                    <li><a href="/login">Login</a></li>
+                    <%}%>
 
-                <li>
-                  <div class="header-icons">
-                    <a class="shopping-cart" href="/cart"><i class="fas fa-shopping-cart"></i></a>
-                    <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
-                  </div>
-                </li>
+                      <li>
+                        <div class="header-icons">
+                          <a class="shopping-cart" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                          <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                        </div>
+                      </li>
               </ul>
             </nav>
             <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
@@ -242,16 +242,16 @@
                                               <% } %>
                       </h6>
                       <%}%>
-                       
+
                         <h6> Quantity: <%= product[i].products. quantity %>
                         </h6>
 
 
                     </div>
-                    
+
 
                   </div>
-                  
+
                   <div class="status">
 
                     <div class="sec1">
@@ -266,21 +266,27 @@
                       </h6>
 
                     </div>
-                    
+
                   </div>
-                  
+
 
                   <div class="status">
                     <div class="sec1">
-                        <h6>Address</h6>
-                       
-                       
-                        <h6><%= product[i].delivaryDetails.address%></h6>
-                        <h6><%= product[i].delivaryDetails.pincode%></h6>
-                        <h6><%= product[i].delivaryDetails.mobile%></h6>
-                        
+                      <h6>Address</h6>
+
+
+                      <h6>
+                        <%= product[i].delivaryDetails.address%>
+                      </h6>
+                      <h6>
+                        <%= product[i].delivaryDetails.pincode%>
+                      </h6>
+                      <h6>
+                        <%= product[i].delivaryDetails.mobile%>
+                      </h6>
+
                     </div>
-                </div>
+                  </div>
 
                 </div>
 
@@ -290,7 +296,8 @@
 
 
             </div>
-            <% if (product[i].products.status=='cancelled' ||product[i].products.status=='Delivered' ||product[i].products.status=='return' ){%>
+            <% if (product[i].products.status=='cancelled' ||product[i].products.status=='Delivered'
+              ||product[i].products.status=='return' ){%>
 
               <%}else{%>
                 <a style="cursor: pointer;" id="<%= product[i]._id%>"

@@ -471,6 +471,40 @@
                           <p>
                           <h6> Price: <%= product[i].products.products.Price %>
                           </h6>
+                          <p>
+                            <h6> Discounted Price: <% if(product[i].products.products.Price
+                              !=product[i].products.products.ProductOffer || product[i].products.products.Price
+                              !=product[i].products.products.CategoryOffer ){ %>
+                              <% if (product[i].products.products.Price> product[i].products.products.CategoryOffer &&
+                                product[i].products.products.ProductOffer >
+                                product[i].products.products.CategoryOffer) { %>
+    
+                                <%=product[i].products.products.CategoryOffer%>
+                                  <%}%>
+    
+    
+    
+    
+                                    <% if (product[i].products.products.Price> product[i].products.products.ProductOffer &&
+                                      product[i].products.products.CategoryOffer
+                                      > product[i].products.products.ProductOffer) { %>
+                                      <%=product[i].products.products.ProductOffer%>
+                                        <%} else { %>
+    
+                                          <% } %>
+    
+    
+                                            <% if (product[i].products.products.Price
+                                              <=product[i].products.products.ProductOffer &&
+                                              product[i].products.products.Price
+                                              <=product[i].products.products.CategoryOffer) { %>
+                                              <%=product[i].products.products.Price%>
+                                                <%} else { %>
+                                                
+                                                  <% } %>
+                          </h6>
+                          <%}%>
+                          </p>
                           </p>
                           <p>
                           <h6> quantity: <%= product[i].products. quantity %>

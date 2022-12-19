@@ -144,7 +144,12 @@ exports.placeorderPost = async (req, res) => {
     try {
         if (req.session.user) {
             let product = await carthelper.getProductList(req.session.user._id)
-
+            let total = await carthelper.getTotalAmount(req.session.user._id)
+            if (newvalue.newstatus == true) {
+                total = parseInt(total) - parseInt(couponAmount);
+            } else {
+                couponAmount = 0;
+            }
             if (req.body.paymentMethod === 'Paypal') {
                 let placeorder = await carthelper.placeOrder(req.body, product, total, newvalue.newcoupon, req.session.user._id, wallet).then((orderId) => {
                     req.session.orderid = orderId.insertedId;

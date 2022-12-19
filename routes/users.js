@@ -89,7 +89,7 @@ router.post("/forgot-passoword", forgotpassword.forgotpassowordpost)
 router.get("/verify-otp-forgotpassword", forgotpassword.renderotpverify)
 router.post('/otp-verify-fp', forgotpassword.verifyOTPfppost)
 
-// chane password 
+// change password 
 
 router.get("/forgot-password-change", forgotpassword.renderchangepassword)
 router.post("/change-passoword-post", forgotpassword.changepassowrdpost)
