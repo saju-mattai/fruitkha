@@ -155,6 +155,7 @@ exports.EditProductPost = async (req, res) => {
       // }
     })
   } catch (error) {
-    res.redirect('/404')
+    console.log(error);
+    // res.redirect('/404')
   }
 } 
